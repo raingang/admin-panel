@@ -1,6 +1,7 @@
 import { fork, takeLatest, call, put } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
-import { getUsers as getUsersAction, setUsers } from '../../actions';
+import { setUsers } from '../../actions';
 import { getUsers } from '../../api';
 
 export default function*  getUsersSaga() {
@@ -13,5 +14,6 @@ function* getUsersWatcher() {
 
 function* getUsersWorker() {
     const users = yield call(getUsers);
+    yield delay(1000);
     yield put(setUsers(users));
 }

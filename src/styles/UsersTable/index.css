@@ -1,0 +1,26 @@
+.main {
+    width: calc(100% - 260px);
+    margin-left: 260px;
+    color: #313132;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.add-user {
+    color: #66AB8C;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.add-user:hover,
+.add-user:active,
+.add-user:focus {
+    border: none;
+    color: #20999C;
+}
