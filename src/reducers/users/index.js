@@ -1,5 +1,5 @@
-const deleteUserHandler = (state, payload) => {
-    return state;
+const deleteUserHandler = (state, { id }) => {
+    return state.filter( item => item.id !== id );
 };
 
 const editUserHandler = (state, payload) => {
@@ -13,6 +13,10 @@ const editUserHandler = (state, payload) => {
     })
 };
 
+const addUserHandler = (state, payload) => {
+	return state.concat(payload);
+}
+
 const users = (state = [], action) => {
     const {type, payload} = action;
     switch(type) {
@@ -22,6 +26,9 @@ const users = (state = [], action) => {
             return deleteUserHandler(state, payload);
         case 'EDIT_USER':
             return editUserHandler(state, payload);
+        case 'ADD_USER':
+            return addUserHandler(state, payload);
+
         default:
             return state;
     }

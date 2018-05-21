@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import User from '../User';
 import Spinner from '../Spinner';
 import Modal from '../../containers/Modal';
 import '../../styles/UsersTable/index.css';
 
-export default class UsersTable extends Component {
+class UsersTable extends Component {
     componentDidMount() {
-        this.props.getUsers();
+        this.props.users.length || this.props.getUsers();
     }
     onClickModal = () => {
         this.props.toggleModal();
@@ -56,3 +57,37 @@ export default class UsersTable extends Component {
     );
   }
 }
+
+UsersTable.propTypes = {
+	getUsers: PropTypes.func,
+	history: PropTypes.object,
+	location: PropTypes.object,
+	match: PropTypes.object,
+	toggleModal: PropTypes.func,
+	users: PropTypes.arrayOf(
+		PropTypes.shape({
+			firstName: PropTypes.string,
+			lastName: PropTypes.string,
+			age: PropTypes.oneOfType([
+				PropTypes.number,
+				PropTypes.string,
+			]),
+			visits: PropTypes.oneOfType([
+				PropTypes.number,
+				PropTypes.string,
+			]),
+			progress: PropTypes.oneOfType([
+				PropTypes.number,
+				PropTypes.string,
+			]),
+			status: PropTypes.oneOf([
+				'relationship',
+				'single',
+				'complicated',
+				'',
+			]),
+		}),
+	),
+};
+
+export default UsersTable;

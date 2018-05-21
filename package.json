@@ -16,6 +16,7 @@
     "font-awesome": "^4.7.0",
     "json-schema": "^0.2.3",
     "json-server": "^0.12.2",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -35,11 +36,6 @@
   },
   "devDependencies": {
     "commander": "^2.15.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
     "namor": "^1.0.1"
   }
 }

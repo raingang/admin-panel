@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
+import { Link } from "react-router-dom";
 import '../../styles/NavPanel/index.css';
 
 class NavPanel extends Component{
-
     render(){
         return (
             <aside className = 'nav-panel'>
@@ -22,4 +22,15 @@ class NavPanel extends Component{
     }
 }
 
-export default NavPanel
+NavPanel.propTypes = {
+	sections: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number,
+			title: PropTypes.string,
+			route: PropTypes.string,
+		})
+	),
+	dispatch: PropTypes.func,
+};
+
+export default NavPanel;

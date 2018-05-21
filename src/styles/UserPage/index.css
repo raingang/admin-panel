@@ -1,0 +1,22 @@
+.detailed-content {
+    display: flex;
+    justify-content: space-between;
+}
+.user {
+    width: 100%;
+}
+.user-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.main-wrapper {
+    margin-top: 40px;
+}
+.buttons {
+    margin-top: 40px;
+}
+
+.buttons button {
+    margin-right: 20px;
+}

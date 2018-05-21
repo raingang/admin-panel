@@ -8,15 +8,19 @@ import NavPanel from '../../containers/NavPanel';
 import '../../styles/App/index.css';
 
 const App = () => {
-  return (
-      <div className = 'app'>
-        <NavPanel />
-          <Switch>
-              <Route path = '/users' exact component = {UsersTable} />
-              <Route path = '/users/:id' component = {UserPage} />
-          </Switch>
-      </div>
-  );
+    return (
+        <div className = 'app'>
+	        <NavPanel />
+            <Switch>
+                <Route path = '/users' exact component = {UsersTable} />
+                <Route path = '/users/:id' component = {UserPage} />
+            </Switch>
+        </div>
+    );
+};
+
+App.propTypes = {
+
 };
 
 export default App;

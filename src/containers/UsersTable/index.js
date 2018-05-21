@@ -8,9 +8,6 @@ const mapStateToProps = state => ({
   showModal: state.showModal,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getUsers: () => dispatch(getUsers()),
-  toggleModal: () => dispatch(toggleModal()),
-});
+const mapDispatchToProps = { getUsers, toggleModal }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserTable);

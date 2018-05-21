@@ -6,8 +6,8 @@ export const getUsers = () => api.get('users');
 
 export const getUser = (id) => api.get(`users/${id}`);
 
-export const postUsers = (users) => api.post('users', {
-    body: JSON.stringify(users),
+export const postUser = (user) => api.post('users', {
+    body: JSON.stringify(user),
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ export const postUsers = (users) => api.post('users', {
 
 export const deleteUser = (id) => api.delete(`users/${id}`);
 
-export const updateUser = (user) => api.put(`users/${user}`, {
+export const updateUser = (user) => api.put(`users/${user.id}`, {
     body: JSON.stringify(user),
     headers: {
         'Accept': 'application/json',
