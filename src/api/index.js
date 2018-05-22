@@ -1,8 +1,8 @@
 import ApiCreator from './api';
 
-const api = ApiCreator('localhost:3000');
+const api = ApiCreator('localhost:3001');
 
-export const getUsers = () => api.get('users');
+export const getUsers = (filter) => api.get(`users/${filter ? ('?' + filter.label + '=' + filter.value) : ''}`);
 
 export const getUser = (id) => api.get(`users/${id}`);
 
@@ -23,3 +23,5 @@ export const updateUser = (user) => api.put(`users/${user.id}`, {
         'Content-Type': 'application/json'
     },
 });
+
+export const getAuth = (data) => api.get(`auth/${'?email=' + data.email + '&_password=' + data.password }`);

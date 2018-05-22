@@ -12,8 +12,9 @@ function* getUsersWatcher() {
     yield takeLatest('GET_USERS', getUsersWorker);
 }
 
-function* getUsersWorker() {
-    const users = yield call(getUsers);
+function* getUsersWorker({ payload }) {
+
+    const users = yield call(() => getUsers(payload));
     yield delay(1000);
     yield put(setUsers(users));
 }

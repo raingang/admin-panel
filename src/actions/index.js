@@ -11,10 +11,13 @@ import {
 	TOGGLE_MODAL,
 	ADD_USER,
 	HANDLE_ADD_USER,
+	SET_FILTER,
+	HANDLE_LOG_IN,
 } from '../actionTypes';
 
-export const getUsers = () => ({
+export const getUsers = (payload) => ({
     type: GET_USERS,
+	payload,
 });
 
 export const setUsers = (payload) => ({
@@ -80,3 +83,14 @@ export const handleAddUser = (payload) => ({
     type: HANDLE_ADD_USER,
     payload,
 });
+
+export const setFilter = (payload) => ({
+	type: SET_FILTER,
+	payload
+});
+
+export const handleLogIn = (payload) => ({
+	type: HANDLE_LOG_IN,
+	payload,
+});
+

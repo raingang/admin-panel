@@ -14,8 +14,8 @@
     color: #D0D1D2;
     text-transform: uppercase;
 }
-.nav-link:hover {
-    color: #fff;
+.nav a {
+    color: lightsteelblue!important;
 }
 .nav-text {
     margin-left: 20px;

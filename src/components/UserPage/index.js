@@ -74,11 +74,12 @@ class UserPage extends Component {
     }
 
     render() {
-        return <div className = 'main'>
-        <div className = 'main-wrapper'>
-            { Object.keys(this.props.user).length !== 0 ? this.renderUserPage() : <Spinner /> }
-        </div>
-        </div>
+        return (
+        	<div>
+	        { Object.keys(this.props.user).length !== 0 ? this.renderUserPage() : <Spinner /> }
+	        </div>
+        )
+
     }
 
     componentWillUnmount(){

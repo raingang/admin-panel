@@ -9,7 +9,7 @@ const validateText = (text) => {
 
 const validateNumber = (number, min = -Infinity, max = +Infinity) => {
 	number = +number;
-	if(number) {
+	if(number || number === 0) {
 		return number >= min && number <= max;
 	}
 	else {

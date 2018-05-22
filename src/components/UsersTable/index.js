@@ -4,21 +4,34 @@ import PropTypes from 'prop-types';
 import User from '../User';
 import Spinner from '../Spinner';
 import Modal from '../../containers/Modal';
+import FilterForm from '../FilterForm';
 import '../../styles/UsersTable/index.css';
 
 class UsersTable extends Component {
+	getUsers() {
+		const filter = (this.props.filter.value && this.props.filter.label) ? this.props.filter : null;
+		this.props.getUsers(filter);
+	}
     componentDidMount() {
-        this.props.users.length || this.props.getUsers();
+        this.props.users.length || this.getUsers();
     }
     onClickModal = () => {
         this.props.toggleModal();
+    }
+    componentWillReceiveProps(nextProps) {
+		const shouldComponentUpdate = this.props.filter.value !== nextProps.filter.value
+			&& this.props.filter.label !== nextProps.filter.label;
+		if(shouldComponentUpdate){
+			this.props.getUsers(nextProps.filter);
+		}
     }
     renderContent() {
         return (
             <div className = 'content'>
                 <div className = 'main-header'>
                     <h1 className = 'title'>Users</h1>
-                    <button onClick = {this.onClickModal} className = 'add-user'>Add User</button>
+	                <FilterForm setFilter = {this.props.setFilter} />
+                    <button onClick =  {this.onClickModal } className = 'add-user'>Add User</button>
                 </div>
                 <table className = 'table table-striped users-table'>
                     <thead>
@@ -48,12 +61,10 @@ class UsersTable extends Component {
     }
     render() {
         return (
-         <main className = 'main'>
-             <div className = 'main-wrapper'>
+        	<div>
                  { this.props.users.length ? this.renderContent() : <Spinner /> }
                  { this.props.showModal && <Modal /> }
-             </div>
-         </main>
+	        </div>
     );
   }
 }
