@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
     "json-schema": "^0.2.3",
@@ -22,6 +25,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-test-renderer": "^16.4.0",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1"
@@ -29,18 +33,30 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "./node_modules/jest/bin/jest.js",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 3001",
     "generate-users": "node generateUsers"
   },
   "devDependencies": {
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-stage-0": "^6.24.1",
     "commander": "^2.15.1",
+    "enzyme": "^2.9.1",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "namor": "^1.0.1"
+    "jest": "^23.0.1",
+    "namor": "^1.0.1",
+    "react-addons-test-utils": "^15.6.2"
+  },
+  "jest":{
+    "moduleNameMapper":{
+      "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__mocks__/fileMock.js"
+    }
   }
 }
