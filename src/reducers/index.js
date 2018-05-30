@@ -7,5 +7,7 @@ import showModal from './showModal';
 import filter from './filter';
 import logged from './logged';
 
-const reducer = combineReducers({ users, user, sections, showModal, filter, logged });
+const reducer = combineReducers({
+  users, user, sections, showModal, filter, logged,
+});
 export default reducer;

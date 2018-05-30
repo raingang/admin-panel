@@ -1,9 +1,9 @@
 const initialSections = [
-    {
-        id: 1,
-        title: 'Users',
-        route: '/users',
-    }
+  {
+    id: 1,
+    title: 'Users',
+    route: '/users',
+  },
 ];
 
 const sections = (state = initialSections) => state;

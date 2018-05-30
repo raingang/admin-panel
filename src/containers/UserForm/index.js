@@ -6,12 +6,12 @@ import UserForm from '../../components/UserForm';
 const getUsers = state => state.users;
 
 const newUserIdSelector = createSelector(
-	getUsers,
-	users => users[users.length - 1].id + 1
+  getUsers,
+  users => users[users.length - 1].id + 1,
 );
 
-const mapStateToProps = (state) => ({
-	id: newUserIdSelector(state),
+const mapStateToProps = state => ({
+  id: newUserIdSelector(state),
 });
 
 export default connect(mapStateToProps)(UserForm);

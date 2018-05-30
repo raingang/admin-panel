@@ -3,7 +3,7 @@ import { fork, takeLatest, call, put } from 'redux-saga/effects';
 import { addUser } from '../../actions';
 import { postUser } from '../../api';
 
-export default function*  addUserSaga() {
+export default function* addUserSaga() {
   yield fork(addUserWatcher);
 }
 

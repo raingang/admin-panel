@@ -8,23 +8,21 @@ import AuthForm from '../../containers/AuthForm';
 
 import '../../styles/App/index.css';
 
-const App = (props) => {
-	return (
-        <div className = 'app'>
-	        <NavPanel />
-	        <main className = 'main'>
-		        <div className = 'main-wrapper'>
-			        {!props.logged ? <AuthForm /> : (
-			        	<Switch>
-					        <Route path = '/users' exact component = {UsersTable} />
-					        <Route path = '/users/:id' component = {UserPage} />
-				        </Switch>
-				        )}
-		        </div>
-	        </main>
-        </div>
-    );
-};
+const App = props => (
+  <div className="app">
+    <NavPanel />
+    <main className="main">
+      <div className="main-wrapper">
+        {!props.logged ? <AuthForm /> : (
+          <Switch>
+            <Route path="/users" exact component={UsersTable} />
+            <Route path="/users/:id" component={UserPage} />
+          </Switch>
+        )}
+      </div>
+    </main>
+  </div>
+);
 
 App.propTypes = {
 
