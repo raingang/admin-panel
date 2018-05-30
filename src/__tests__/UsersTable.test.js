@@ -7,7 +7,7 @@ import Spinner from '../components/Spinner';
 import App from '../components/App';
 
 
-describe('<UsersTable', () => {
+describe('<UsersTable />', () => {
 
 	it('Render UserTable', () => {
 		const wrapper = shallow(<App logged = {true} />);

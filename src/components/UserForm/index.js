@@ -24,11 +24,11 @@ class UserForm extends Component {
     };
 
     onSubmit = (e) => {
-      e.preventDefault();
-      if(validateForm(this.state)) {
-	      this.props.handleAction(this.state);
-	      this.props.handleClose && this.props.handleClose();
-      }
+        e.preventDefault();
+        if(validateForm(this.state)) {
+	        this.props.handleAction(this.state);
+	        this.props.handleClose && this.props.handleClose();
+        }
     }
 
     render(){
