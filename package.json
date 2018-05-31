@@ -58,5 +58,14 @@
       "\\.(css|less|sass|scss)$": "<rootDir>/src/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__mocks__/fileMock.js"
     }
+  },
+  "eslintConfig": {
+    "globals": {
+      "window": true,
+      "jest": true,
+      "expect": true,
+      "it": true,
+      "describe": true
+    }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Route } from 'react-router';
+
 import UsersTable from '../components/UsersTable';
 import Spinner from '../components/Spinner';
 import App from '../components/App';
@@ -12,6 +13,7 @@ describe('<UsersTable />', () => {
       .find(Route)
       .find({ path: '/users' })).toHaveLength(1);
   });
+
   it('Render User', () => {
     const wrapper = shallow(<UsersTable users={[
       {
@@ -27,6 +29,7 @@ describe('<UsersTable />', () => {
     />);
     expect(wrapper.find('tbody').children()).toHaveLength(1);
   });
+
   it('Render Spinner', () => {
     const wrapper = shallow(<UsersTable users={[]} />);
     expect(wrapper.contains(<Spinner />)).toBeTruthy();

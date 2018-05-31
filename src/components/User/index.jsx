@@ -5,29 +5,29 @@ import PropTypes from 'prop-types';
 import '../../styles/User/index.css';
 
 class User extends Component {
-    onClick = () => {
-      this.props.history.push(`/users/${this.props.id}`);
-    };
-    render() {
-        const {
-            id,
-            firstName,
-            lastName,
-            age,
-            visits,
-            progress,
-            status
-        } = this.props;
+  onClick = () => {
+    this.props.history.push(`/users/${this.props.id}`);
+  };
+  render() {
+    const {
+      id,
+      firstName,
+      lastName,
+      age,
+      visits,
+      progress,
+      status
+    } = this.props;
     return (
-    	<tr className = 'user' onClick = {this.onClick}>
-		    <th scope="row">{id}</th>
-		    <td>{firstName}</td>
-		    <td>{lastName}</td>
-		    <td>{age}</td>
-		    <td>{visits}</td>
-		    <td>{progress}</td>
-		    <td>{status}</td>
-        </tr>
+      <tr className = 'user' onClick = {this.onClick}>
+        <th scope="row">{id}</th>
+        <td>{firstName}</td>
+        <td>{lastName}</td>
+        <td>{age}</td>
+        <td>{visits}</td>
+        <td>{progress}</td>
+        <td>{status}</td>
+      </tr>
     )
   }
 }
